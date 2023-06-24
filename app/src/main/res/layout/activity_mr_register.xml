@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screens.views.MrRegisterActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:elevation="15dp"
+        tools:visibility="visible"
+        android:layout_centerInParent="true"/>
+
+    <View
+        android:id="@+id/overlay_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorOverlay"
+        android:elevation="14dp"
+        android:visibility="gone"
+        android:clickable="true"
+        tools:visibility="visible"
+        android:focusable="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="68dp"
+                android:background="@drawable/container_rounded1"
+                android:elevation="12dp"
+                android:outlineAmbientShadowColor="@color/shadowColor"
+                android:outlineSpotShadowColor="@color/shadowColor"
+                app:layout_constraintHorizontal_bias="0.046"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="p">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/mylogo" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/uniform_black"
+                android:text="@string/wlcome"
+                android:textColor="#535454"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="@+id/frameLayout"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="370dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_sans_semibold"
+                android:text="@string/register"
+                android:textColor="#A9A9A9"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="27dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <com.rie.alkisah.base.MrCustomView
+                    android:id="@+id/ed_register_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/name"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="18dp"
+                    android:textColor="@color/textColorCaption"
+                    android:textColorHint="@color/textColorCaption2"
+                    android:textSize="12sp"
+                    android:alpha="0"/>
+
+                <com.rie.alkisah.base.MrCustomView
+                    android:id="@+id/ed_register_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:drawableStart="@drawable/ic_message"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="18dp"
+                    android:textColor="@color/textColorCaption"
+                    android:textColorHint="@color/textColorCaption2"
+                    android:textSize="12sp"
+                    android:alpha="0"/>
+
+                <com.rie.alkisah.base.MrCustomView
+                    android:id="@+id/ed_register_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="18dp"
+                    android:textColor="@color/textColorCaption"
+                    android:textColorHint="@color/textColorCaption2"
+                    android:textSize="12sp"
+                    android:alpha="0"/>
+
+                <com.rie.alkisah.base.MrCustomView
+                    android:id="@+id/ed_register_confirmPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:hint="@string/c_password"
+                    android:inputType="textPassword"
+                    android:minHeight="56dp"
+                    android:paddingHorizontal="18dp"
+                    android:textColor="@color/textColorCaption"
+                    android:textColorHint="@color/textColorCaption2"
+                    android:textSize="12sp"
+                    android:alpha="0"/>
+            </LinearLayout>
+
+            <com.rie.alkisah.base.MrCustomButton
+                android:id="@+id/button_register"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                app:backgroundTint="@color/blue_400"
+                android:fontFamily="@font/nunito_sans_bold"
+                android:text="@string/dafter"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                android:alpha="0"/>
+
+            <LinearLayout
+                android:id="@+id/suggest_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_register"
+                android:alpha="0">
+                <TextView
+                    android:id="@+id/txt_already_have_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_sans_regular"
+                    android:text="@string/already_have_an_account"/>
+                <TextView
+                    android:id="@+id/txt_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/blue_800"
+                    android:fontFamily="@font/nunito_sans_semibold"
+                    android:text="@string/login_now"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

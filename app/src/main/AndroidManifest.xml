@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/mylogo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Alkisah"
+        tools:targetApi="31">
+        <activity
+            android:name=".Screens.views.MrCameraActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBMvF5HhJLCc04DCBSQloLPOXxMPRK5nmw" />
+
+        <activity
+            android:name=".Screens.views.MrMapsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Alkisah.NoActionBar" />
+        <activity
+            android:name=".Screens.views.MrSplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Alkisah.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Screens.views.UploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Screens.views.MrDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Screens.views.MrRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Screens.views.MrLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Screens.views.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Alkisah.NoActionBar" />
+    </application>
+
+</manifest>
